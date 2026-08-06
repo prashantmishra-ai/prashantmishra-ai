@@ -1,0 +1,38 @@
+name: Update CEO streak
+
+on:
+  schedule:
+    - cron: "7 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-ceo-streak
+  cancel-in-progress: true
+
+jobs:
+  update-streak:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Generate today's CEO streak card
+        run: node scripts/update-ceo-streak.mjs
+
+      - name: Commit updated card
+        shell: bash
+        run: |
+          if git diff --quiet -- assets/ceo-streak.svg; then
+            echo "CEO streak card is already current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/ceo-streak.svg
+          git commit -m "chore: advance CEO streak"
+          git push

@@ -1,0 +1,67 @@
+<svg width="1200" height="250" viewBox="0 0 1200 250" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Continuous CEO journey: day 700</title>
+  <desc id="desc">Prashant Mishra has been building as CEO continuously since 6 September 2024. This card updates every day.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="250" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111F"/>
+      <stop offset=".52" stop-color="#0A0F1F"/>
+      <stop offset="1" stop-color="#141026"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="92" y1="40" x2="1110" y2="219" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14B8A6"/>
+      <stop offset=".52" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" stroke="#94A3B8" stroke-opacity=".045"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1200" height="250" rx="24"/></clipPath>
+  </defs>
+  <style>
+    .label { font: 700 14px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 3px; }
+    .day { font: 800 52px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: -2px; }
+    .title { font: 700 28px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .body { font: 500 17px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .small { font: 600 13px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: .7px; }
+    .ring { animation: rotate 10s linear infinite; transform-origin: 171px 125px; }
+    .pulse { animation: pulse 2.8s ease-in-out infinite; }
+    .flow { animation: flow 2.2s linear infinite; }
+    @keyframes rotate { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%, 100% { opacity: .46; } 50% { opacity: 1; } }
+    @keyframes flow { to { stroke-dashoffset: -42; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="250" fill="url(#bg)"/>
+    <rect width="1200" height="250" fill="url(#grid)"/>
+    <circle cx="1135" cy="-10" r="180" fill="#7C3AED" fill-opacity=".1"/>
+    <circle cx="74" cy="274" r="190" fill="#14B8A6" fill-opacity=".08"/>
+
+    <circle cx="171" cy="125" r="79" stroke="#334155" stroke-width="10"/>
+    <circle cx="171" cy="125" r="79" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="160 340" class="ring" filter="url(#glow)"/>
+    <circle cx="171" cy="125" r="60" fill="#0D1728" stroke="#334155"/>
+    <text x="171" y="111" text-anchor="middle" class="small" fill="#94A3B8">DAY</text>
+    <text x="171" y="153" text-anchor="middle" class="day" fill="#F8FAFC">700</text>
+
+    <text x="303" y="70" class="label" fill="#5EEAD4">THE CEO STREAK</text>
+    <text x="301" y="116" class="title" fill="#F8FAFC">Continuous founder mode.</text>
+    <text x="301" y="150" class="body" fill="#CBD5E1">Building, leading, and shipping every day since</text>
+    <text x="301" y="179" class="body" fill="#F8FAFC">06 September 2024 <tspan fill="#22D3EE">•</tspan> no reset button.</text>
+
+    <path d="M710 124H1100" stroke="#334155" stroke-width="2"/>
+    <path d="M710 124H1100" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 14" class="flow"/>
+    <circle cx="740" cy="124" r="9" fill="#14B8A6" class="pulse"/>
+    <circle cx="895" cy="124" r="9" fill="#22D3EE" class="pulse" style="animation-delay:-.9s"/>
+    <circle cx="1064" cy="124" r="9" fill="#8B5CF6" class="pulse" style="animation-delay:-1.8s"/>
+    <text x="740" y="93" text-anchor="middle" class="small" fill="#CBD5E1">VISION</text>
+    <text x="895" y="93" text-anchor="middle" class="small" fill="#CBD5E1">EXECUTION</text>
+    <text x="1064" y="93" text-anchor="middle" class="small" fill="#CBD5E1">IMPACT</text>
+    <text x="895" y="166" text-anchor="middle" class="small" fill="#64748B">AUTO-UPDATED DAILY</text>
+    <text x="895" y="190" text-anchor="middle" class="small" fill="#94A3B8">LAST REFRESH • 06 AUG 2026 UTC</text>
+  </g>
+  <rect x=".75" y=".75" width="1198.5" height="248.5" rx="23.25" stroke="url(#accent)" stroke-opacity=".36" stroke-width="1.5"/>
+</svg>
