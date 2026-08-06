@@ -26,13 +26,17 @@ jobs:
       - name: Commit updated card
         shell: bash
         run: |
-          if git diff --quiet -- assets/ceo-streak.svg; then
+          if git diff --quiet -- assets/; then
             echo "CEO streak card is already current."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/ceo-streak.svg
+          git add \
+            assets/ceo-streak.svg \
+            assets/ceo-streak-light.svg \
+            assets/hero-light.svg \
+            assets/build-signals-light.svg
           git commit -m "chore: advance CEO streak"
           git push

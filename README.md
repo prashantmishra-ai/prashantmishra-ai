@@ -1,6 +1,10 @@
 <div align="center">
   <a href="https://innovativus.in">
-    <img src="./assets/hero.svg" width="100%" alt="Prashant Mishra — CEO and Managing Director at Innovativus Technologies, founder of Pacibook" />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/hero.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg" />
+      <img src="./assets/hero.svg" width="100%" alt="Prashant Mishra — CEO and Managing Director at Innovativus Technologies, founder of Pacibook" />
+    </picture>
   </a>
 </div>
 
@@ -13,7 +17,11 @@
 <br />
 
 <div align="center">
-  <img src="./assets/ceo-streak.svg" width="100%" alt="Continuous CEO journey since 6 September 2024" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/ceo-streak.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/ceo-streak-light.svg" />
+    <img src="./assets/ceo-streak.svg" width="100%" alt="Continuous CEO journey since 6 September 2024" />
+  </picture>
 </div>
 
 ## The founder's desk
@@ -97,7 +105,11 @@ flowchart LR
 ## Build signals
 
 <div align="center">
-  <img src="./assets/build-signals.svg" width="100%" alt="Innovativus build signals: more than 20 clients, more than 3 live products, 22 Indian languages, and DPIIT recognition" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/build-signals.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/build-signals-light.svg" />
+    <img src="./assets/build-signals.svg" width="100%" alt="Innovativus build signals: more than 20 clients, more than 3 live products, 22 Indian languages, and DPIIT recognition" />
+  </picture>
 </div>
 
 ## Let's build something that matters

@@ -1,9 +1,33 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const START_DATE_UTC = Date.UTC(2024, 8, 6);
 const DAY_IN_MS = 86_400_000;
+
+const LIGHT_PALETTE = new Map(
+  Object.entries({
+    "#07111F": "#F8FAFC",
+    "#0A0F1F": "#FFFFFF",
+    "#141026": "#F5F3FF",
+    "#F8FAFC": "#0F172A",
+    "#E2E8F0": "#1E293B",
+    "#CBD5E1": "#334155",
+    "#94A3B8": "#475569",
+    "#334155": "#CBD5E1",
+    "#0D1728": "#FFFFFF",
+    "#111C2E": "#FFFFFF",
+    "#17152B": "#F5F3FF",
+    "#0F1D2D": "#ECFEFF",
+    "#171B28": "#FFFBEB",
+  }),
+);
+
+function toLightTheme(source) {
+  return source.replace(/#[0-9A-Fa-f]{6}/g, (color) =>
+    LIGHT_PALETTE.get(color.toUpperCase()) ?? color,
+  );
+}
 
 const dateOverride = process.env.CEO_STREAK_DATE;
 
@@ -107,8 +131,23 @@ const svg = `<svg width="1200" height="250" viewBox="0 0 1200 250" fill="none" x
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const outputPath = resolve(scriptDirectory, "../assets/ceo-streak.svg");
+const lightOutputPath = resolve(
+  scriptDirectory,
+  "../assets/ceo-streak-light.svg",
+);
 
 await mkdir(dirname(outputPath), { recursive: true });
 await writeFile(outputPath, svg, "utf8");
+await writeFile(lightOutputPath, toLightTheme(svg), "utf8");
 
-console.log(`Updated CEO streak: day ${dayNumber} (${outputPath})`);
+for (const [darkName, lightName] of [
+  ["hero.svg", "hero-light.svg"],
+  ["build-signals.svg", "build-signals-light.svg"],
+]) {
+  const darkPath = resolve(scriptDirectory, `../assets/${darkName}`);
+  const lightPath = resolve(scriptDirectory, `../assets/${lightName}`);
+  const darkSvg = await readFile(darkPath, "utf8");
+  await writeFile(lightPath, toLightTheme(darkSvg), "utf8");
+}
+
+console.log(`Updated light/dark CEO streak: day ${dayNumber}`);
